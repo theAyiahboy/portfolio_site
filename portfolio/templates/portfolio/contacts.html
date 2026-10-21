@@ -1,0 +1,108 @@
+{% extends "portfolio/base.html" %}
+
+{% block title %}Contact | Giovanni Ayiah-Mensah{% endblock %}
+
+{% block content %}
+<section class="relative isolate overflow-hidden border-b border-slate-900">
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <div class="absolute -top-48 right-[-10%] h-[32rem] w-[32rem] rounded-full bg-cyan-400/10 blur-3xl"></div>
+        <div class="absolute bottom-[-18rem] left-[-8%] h-[28rem] w-[28rem] rounded-full bg-blue-500/10 blur-3xl"></div>
+    </div>
+    <div class="mx-auto max-w-6xl px-6 py-20 md:py-28">
+        <p class="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.24em] text-cyan-300"><span class="h-px w-8 bg-cyan-300"></span>Contact</p>
+        <h1 class="mt-6 max-w-4xl text-5xl font-semibold leading-[1.08] tracking-tight text-white sm:text-6xl md:text-7xl">Let’s start a <span class="text-slate-400">conversation.</span></h1>
+        <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-400">Have a question, an opportunity, or an idea to share? Send me a message using the form below. I look forward to hearing from you.</p>
+    </div>
+</section>
+
+{% if messages %}
+<section class="mx-auto max-w-6xl px-6 pt-8" aria-live="polite">
+    {% for message in messages %}
+    <p class="rounded-xl border {% if message.tags == 'success' %}border-emerald-400/30 bg-emerald-400/10 text-emerald-200{% else %}border-amber-300/30 bg-amber-300/10 text-amber-100{% endif %} px-5 py-4 text-sm">{{ message }}</p>
+    {% endfor %}
+</section>
+{% endif %}
+
+<section class="mx-auto max-w-6xl px-6 py-12 md:py-16" aria-labelledby="connect-heading">
+    <div class="max-w-2xl">
+        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300">Let's connect</p>
+        <h2 id="connect-heading" class="mt-3 text-2xl font-semibold tracking-tight text-white sm:text-3xl">Choose the channel that works for you.</h2>
+    </div>
+    <div class="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <a href="mailto:giovanniayiahmensah@gmail.com" class="group rounded-2xl border border-slate-800 bg-slate-900/50 p-5 transition hover:border-slate-600 hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-cyan-300">
+            <span class="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">Email</span>
+            <span class="mt-2 block break-all text-sm font-medium text-slate-200 group-hover:text-cyan-200">giovanniayiahmensah@gmail.com</span>
+        </a>
+        <a href="https://github.com/theAyiahboy" target="_blank" rel="noopener noreferrer" class="group rounded-2xl border border-slate-800 bg-slate-900/50 p-5 transition hover:border-slate-600 hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-cyan-300">
+            <span class="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">GitHub</span>
+            <span class="mt-2 block text-sm font-medium text-slate-200 group-hover:text-cyan-200">github.com/theAyiahboy <span aria-hidden="true">↗</span></span>
+        </a>
+        <a href="https://www.linkedin.com/in/giovanniayiah-mensah" target="_blank" rel="noopener noreferrer" class="group rounded-2xl border border-slate-800 bg-slate-900/50 p-5 transition hover:border-slate-600 hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-cyan-300">
+            <span class="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">LinkedIn</span>
+            <span class="mt-2 block text-sm font-medium text-slate-200 group-hover:text-cyan-200">Giovanni Ayiah-Mensah <span aria-hidden="true">↗</span></span>
+        </a>
+        <a href="https://web.facebook.com/giovanni.mensah.9" target="_blank" rel="noopener noreferrer" class="group rounded-2xl border border-slate-800 bg-slate-900/50 p-5 transition hover:border-slate-600 hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-cyan-300">
+            <span class="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">Facebook</span>
+            <span class="mt-2 block text-sm font-medium text-slate-200 group-hover:text-cyan-200">Giovanni Mensah <span aria-hidden="true">↗</span></span>
+        </a>
+        <a href="https://wa.me/233595541775" target="_blank" rel="noopener noreferrer" class="group rounded-2xl border border-slate-800 bg-slate-900/50 p-5 transition hover:border-slate-600 hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-cyan-300">
+            <span class="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">WhatsApp</span>
+            <span class="mt-2 block text-sm font-medium text-slate-200 group-hover:text-cyan-200">059 554 1775 <span aria-hidden="true">↗</span></span>
+        </a>
+        <a href="tel:+233595541775" class="group rounded-2xl border border-slate-800 bg-slate-900/50 p-5 transition hover:border-slate-600 hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-cyan-300">
+            <span class="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">Phone</span>
+            <span class="mt-2 block text-sm font-medium text-slate-200 group-hover:text-cyan-200">059 554 1775</span>
+        </a>
+    </div>
+</section>
+
+<section class="border-y border-slate-900 bg-slate-900/30" aria-labelledby="message-heading">
+    <div class="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-[0.8fr_1.2fr] md:gap-16 md:py-20">
+        <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300">Send a message</p>
+            <h2 id="message-heading" class="mt-3 text-2xl font-semibold tracking-tight text-white sm:text-3xl">Tell me what’s on your mind.</h2>
+            <p class="mt-4 leading-7 text-slate-400">Leave your details and a short message. I’ll get back to you as soon as I can.</p>
+        </div>
+        <form method="post" class="rounded-2xl border border-slate-800 bg-slate-950/70 p-6 sm:p-8">
+            {% csrf_token %}
+            <div class="grid gap-5 sm:grid-cols-2">
+                <div>
+                    <label for="id_full_name" class="mb-2 block text-sm font-medium text-slate-200">Full name</label>
+                    <input id="id_full_name" name="full_name" type="text" maxlength="120" autocomplete="name" required value="{{ form.full_name.value|default_if_none:'' }}" class="w-full rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 text-sm text-white placeholder:text-slate-600 focus:border-cyan-300 focus:outline-none focus:ring-1 focus:ring-cyan-300" placeholder="Jane Doe">
+                    {% for error in form.full_name.errors %}<p class="mt-2 text-sm text-rose-300">{{ error }}</p>{% endfor %}
+                </div>
+                <div>
+                    <label for="id_email" class="mb-2 block text-sm font-medium text-slate-200">Email address</label>
+                    <input id="id_email" name="email" type="email" maxlength="254" autocomplete="email" required value="{{ form.email.value|default_if_none:'' }}" class="w-full rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 text-sm text-white placeholder:text-slate-600 focus:border-cyan-300 focus:outline-none focus:ring-1 focus:ring-cyan-300" placeholder="jane@example.com">
+                    {% for error in form.email.errors %}<p class="mt-2 text-sm text-rose-300">{{ error }}</p>{% endfor %}
+                </div>
+                <div>
+                    <label for="id_phone" class="mb-2 block text-sm font-medium text-slate-200">Phone number</label>
+                    <input id="id_phone" name="phone" type="tel" maxlength="40" autocomplete="tel" required value="{{ form.phone.value|default_if_none:'' }}" class="w-full rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 text-sm text-white placeholder:text-slate-600 focus:border-cyan-300 focus:outline-none focus:ring-1 focus:ring-cyan-300" placeholder="+233 ...">
+                    {% for error in form.phone.errors %}<p class="mt-2 text-sm text-rose-300">{{ error }}</p>{% endfor %}
+                </div>
+                <div>
+                    <label for="id_subject" class="mb-2 block text-sm font-medium text-slate-200">What would you like to discuss?</label>
+                    <select id="id_subject" name="subject" required class="w-full rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 text-sm text-white focus:border-cyan-300 focus:outline-none focus:ring-1 focus:ring-cyan-300">
+                        <option value="" disabled {% if not form.subject.value %}selected{% endif %}>Choose a topic</option>
+                        {% for value, label in form.fields.subject.choices %}
+                        <option value="{{ value }}" {% if form.subject.value == value %}selected{% endif %}>{{ label }}</option>
+                        {% endfor %}
+                    </select>
+                    {% for error in form.subject.errors %}<p class="mt-2 text-sm text-rose-300">{{ error }}</p>{% endfor %}
+                </div>
+                <div class="sm:col-span-2">
+                    <label for="id_message" class="mb-2 block text-sm font-medium text-slate-200">Message</label>
+                    <textarea id="id_message" name="message" rows="6" maxlength="5000" required class="w-full resize-y rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 text-sm leading-6 text-white placeholder:text-slate-600 focus:border-cyan-300 focus:outline-none focus:ring-1 focus:ring-cyan-300" placeholder="How can I help?">{{ form.message.value|default_if_none:'' }}</textarea>
+                    {% for error in form.message.errors %}<p class="mt-2 text-sm text-rose-300">{{ error }}</p>{% endfor %}
+                </div>
+            </div>
+            {% if form.non_field_errors %}<p class="mt-4 text-sm text-rose-300">{{ form.non_field_errors }}</p>{% endif %}
+            <button type="submit" class="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-100 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2 focus:ring-offset-slate-950">Send message <span aria-hidden="true">→</span></button>
+            <p class="mt-4 text-xs leading-5 text-slate-500">Your details will only be used to respond to your message.</p>
+        </form>
+    </div>
+</section>
+
+
+{% endblock %}

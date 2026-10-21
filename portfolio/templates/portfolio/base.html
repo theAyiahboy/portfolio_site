@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Giovanni Ayiah-Mensah, a Business Information Systems student building skills in web development and data analytics.">
+    <meta name="theme-color" content="#020617">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/output.css' %}">
+    <title>{% block title %}Giovanni's Portfolio{% endblock %}</title>
+</head>
+
+<body class="bg-slate-950 text-white selection:bg-slate-800 selection:text-white">
+
+    <!-- Navbar (Shared across all pages) -->
+    <header class="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-900">
+        <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between flex-wrap gap-4">
+            <a href="{% url 'home' %}" class="text-lg font-semibold tracking-tight text-white focus:outline-none focus:ring-2 focus:ring-cyan-300">Giovanni Ayiah-Mensah</a>
+            <div class="flex items-center flex-wrap gap-x-6 gap-y-3">
+                <a href="{% url 'home' %}" {% if request.resolver_match.url_name == 'home' %}aria-current="page"{% endif %} class="text-sm {% if request.resolver_match.url_name == 'home' %}text-white{% else %}text-slate-400{% endif %} transition hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-300">Home</a>
+                <a href="{% url 'about' %}" {% if request.resolver_match.url_name == 'about' %}aria-current="page"{% endif %} class="text-sm {% if request.resolver_match.url_name == 'about' %}text-white{% else %}text-slate-400{% endif %} transition hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-300">About</a>
+                <a href="{% url 'certifications' %}" {% if request.resolver_match.url_name == 'certifications' %}aria-current="page"{% endif %} class="text-sm {% if request.resolver_match.url_name == 'certifications' %}text-white{% else %}text-slate-400{% endif %} transition hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-300">Learning</a>
+                <a href="{% url 'projects' %}" {% if request.resolver_match.url_name == 'projects' %}aria-current="page"{% endif %} class="text-sm {% if request.resolver_match.url_name == 'projects' %}text-white{% else %}text-slate-400{% endif %} transition hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-300">Projects</a>
+                <a href="{% url 'contacts' %}" {% if request.resolver_match.url_name == 'contacts' %}aria-current="page"{% endif %} class="text-sm {% if request.resolver_match.url_name == 'contacts' %}text-white{% else %}text-slate-400{% endif %} transition hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-300">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Unique Page Content Gets Injected Here -->
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Footer (Shared across all pages) -->
+    <footer class="border-t border-slate-900 bg-slate-950">
+        <div class="max-w-6xl mx-auto px-6 py-8 text-center text-xs text-slate-500">
+            &copy; {% now "Y" %} Giovanni Ayiah-Mensah <span class="px-1">·</span> Built with Django and Tailwind CSS
+        </div>
+    </footer>
+
+</body>
+</html>
